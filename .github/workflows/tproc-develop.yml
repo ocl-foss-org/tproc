@@ -1,0 +1,17 @@
+name: Ne.app TProc CI (Develop)
+
+on:
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ "develop" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build CI OCL
+      run: sudo cmake -B build -DINSTALL_OCL=1
