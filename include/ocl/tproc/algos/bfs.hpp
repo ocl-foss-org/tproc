@@ -18,6 +18,7 @@ namespace ocl::tproc::bfs
 	template <typename T>
 	struct source_iterator final
 	{
+    public:
         using type = T;
 		using pointer = T*;
 		using PredT	  = pointer (*)(pointer);
@@ -27,6 +28,7 @@ namespace ocl::tproc::bfs
 		{
 			return nullptr;
 		}
+        
 	};
 
 	/// \requires source_iterator
