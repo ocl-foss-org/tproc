@@ -16,9 +16,9 @@ using namespace ::ocl;
 using namespace ::boost;
 #endif
 
-int main()
+int main(void)
 {
-	auto rope		= tproc::crope("The Quick Brown Fox Jumps Over The Lazy Dog");
+	auto rope		= std::make_unique<tproc::crope>("The Quick Brown Fox Jumps Over The Lazy Dog");
 	auto new_elem	= std::make_unique<tproc::crope>(", and Jumps again");
 	auto new_elem_2 = std::make_unique<tproc::crope>(", and then Jumps down.");
 
@@ -27,7 +27,7 @@ int main()
 
 	boost::asio::co_spawn(
 		spawn_strand, [&new_elem, &new_elem_2, &rope]() -> boost::asio::awaitable<void> {
-			rope.concat(new_elem.get());
+			rope->concat(new_elem.get());
 			new_elem->concat(new_elem_2.get());
 
 			co_return;
@@ -36,5 +36,5 @@ int main()
 
 	ocl::asio::run<[]() { (void)0; }>(ioc);
 
-	std::cout << rope << std::endl;
+	std::cout << *rope << std::endl;
 }
