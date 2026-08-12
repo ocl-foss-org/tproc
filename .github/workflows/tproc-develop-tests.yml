@@ -1,4 +1,4 @@
-name: Ne.app TProc CI + BJam Test (Develop)
+name: Ne.app TProc CI + Tests + BJam Test (Develop)
 
 on:
   push:
