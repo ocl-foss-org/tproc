@@ -25,5 +25,6 @@ BOOST_AUTO_TEST_CASE(rope_should_succeed_in_concat)
 
 	std::cout << "Result: " << rope << std::endl;
 
+	BOOST_TEST(rope_2 != nullptr);
 	BOOST_TEST(rope.to_string() == "Exact Sentence");
 }

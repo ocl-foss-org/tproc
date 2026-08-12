@@ -26,3 +26,11 @@ BOOST_AUTO_TEST_CASE(allocator_should_not_succeed_in_empty)
 	auto rope = tproc::crope("foobar");
 	BOOST_TEST(rope.empty() == false);
 }
+
+BOOST_AUTO_TEST_CASE(allocator_x)
+{
+	auto rope = new tproc::crope("Hello, world, ");
+	rope->concat(new tproc::crope("Hello, world!\n"));
+
+	std::cout << *rope;
+}
