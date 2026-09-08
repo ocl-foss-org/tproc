@@ -9,6 +9,8 @@
 
 #include <ocl/tproc/detail/config.hpp>
 
+/// AMLALE: SourcePair desrves documentation by themselves.
+
 namespace ocl::tproc
 {
 
